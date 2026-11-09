@@ -998,3 +998,77 @@
     "description": "Capture VAHAN transfer approval and updated buyer details; an application alone is not completion.",
     "priority": "normal",
     "applicability": "all"
+  },
+  {
+    "id": "V134",
+    "section": "INDEPENDENT INSPECTION AND TRANSACTION",
+    "title": "Insurer policy transfer / new coverage",
+    "description": "Confirm effective date, coverage and named insured as applicable before road use.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V101",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "Latest approved RC expiry and status documented",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V102",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "pending renewal application disposition documented",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V103",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "RTO fitness inspection/test result obtained",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V104",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "Any accident history indicator investigated",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V105",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "Physical VIN and engine number matched to RC",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V106",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "Ownership count and hypothecation verified",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V107",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "Roadworthiness / safety inspection report obtained",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  },
+  {
+    "id": "V108",
+    "section": "CLOSING EVIDENCE CHECKS",
+    "title": "PUC, tax, insurance and plate status checked",
+    "description": "Record the result and supporting evidence before closing this item.",
+    "priority": "normal",
+    "applicability": "all"
+  }
+]

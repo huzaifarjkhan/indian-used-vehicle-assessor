@@ -1,0 +1,9 @@
+# Private individual assessment data (use blank templates in git)
+vehicle.json
+vehicle_checklist.html
+*_progress.json
+*.pyc
+__pycache__/
+.DS_Store
+# Do not commit scanned documents or generated PDFs of real vehicles
+*.pdf

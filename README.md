@@ -1,6 +1,6 @@
 # Indian Used-Vehicle Assessor — Reusable Assessment Skill
 
-A portable, user-provided ChatGPT skill and standalone checklist. The skill is **not automatically installed** or given permanent access to future chats. To reuse: upload `Indian_Used_Vehicle_Assessor_Skill.zip` or `SKILL.md` in a new conversation, or install the files in a compatible skill system.
+A portable, user-provided ChatGPT skill and standalone checklist. The skill is **not automatically installed** or given permanent access to future chats. To reuse: choose **Code > Download ZIP** on this repository, or download `SKILL.md`, then attach the file to a new conversation. You can also install the files in a compatible skill system.
 
 ## Quick start for future ChatGPT chats
 
@@ -21,6 +21,10 @@ A portable, user-provided ChatGPT skill and standalone checklist. The skill is *
 | `scripts/build_checklist.py` | Generates A4, locally markable HTML; standard Python 3, no dependencies |
 | `output/Reusable_Used_Vehicle_Checklist.html` | Ready-to-use blank interactive/printable HTML |
 | `examples/anonymized-case.md` | Example source interpretation without personal identifiers |
+
+## Open the checklist
+
+Download [`output/Reusable_Used_Vehicle_Checklist.html`](output/Reusable_Used_Vehicle_Checklist.html) and open it locally in Chrome or another modern browser. The checklist supports markable inspection items, progress export/import and A4 printing.
 
 ## Generate a new vehicle HTML checklist
 

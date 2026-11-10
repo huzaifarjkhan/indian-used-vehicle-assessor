@@ -1,0 +1,96 @@
+{
+  "report_title": "Illustrative Hatchback | Used Vehicle Investigation",
+  "report_date": "2026-11-09",
+  "report_scope": "Fictional demonstration; no real vehicle or person represented.",
+  "identifiers": {
+    "registration": "SAMPLE-PLATE",
+    "formatted_registration": "",
+    "vin": "SAMPLE-VIN-NOT-A-REAL-VIN",
+    "engine_number": "SAMPLE-ENGINE",
+    "make": "Example Motors",
+    "model": "City Hatch",
+    "variant": "1.1 Manual",
+    "fuel": "Petrol",
+    "transmission": "",
+    "vehicle_class": "",
+    "first_registration": "01-01-2010",
+    "manufacture_month_year": "",
+    "rto": "",
+    "owner_serial": "3",
+    "owner_count": "",
+    "registration_valid_to": "",
+    "odometer": "",
+    "mv_tax_valid_to": "",
+    "puc_valid_to": "",
+    "hsrp_status": "",
+    "insurance_company": "",
+    "insurance_valid_to": "",
+    "loan_or_hypothecation": "",
+    "renewal_application": ""
+  },
+  "identifier_evidence": {},
+  "additional_identifiers": [],
+  "attention_points": [
+    {
+      "title": "Third-owner entry",
+      "detail": "Owner Serial: 3; past transfer history not fetched.",
+      "evidence": "Illustrative RC"
+    },
+    {
+      "title": "Current RC validity unverified",
+      "detail": "Live VAHAN lookup not performed.",
+      "evidence": "No official result supplied"
+    }
+  ],
+  "metrics": [],
+  "records": [
+    {
+      "status": "Recorded",
+      "subject": "Owner serial",
+      "result": "3",
+      "source": "Illustrative RC",
+      "checked_at": "2026-11-09"
+    }
+  ],
+  "observations": [
+    {
+      "area": "Front bumper",
+      "observation": "Surface scratches in sample image",
+      "limitations": "No chassis structure visible",
+      "follow_up": "Inspect paint and crash bar",
+      "evidence": "Example P01"
+    }
+  ],
+  "portals": [
+    {
+      "id": "hyundai_recall",
+      "skip": true
+    },
+    {
+      "id": "maruti_recall",
+      "skip": true
+    }
+  ],
+  "additional_portals": [],
+  "outstanding": [
+    {
+      "title": "Live VAHAN record",
+      "detail": "Verify registration, ownership and HP/financier status"
+    },
+    {
+      "title": "Physical VIN",
+      "detail": "Compare stamped VIN with RC"
+    }
+  ],
+  "comparables": [],
+  "photos": [],
+  "evidence": [
+    {
+      "id": "E01",
+      "source": "Illustrative RC",
+      "result": "Owner serial 3",
+      "date": "2026-11-09",
+      "limitation": "Entirely fictional example"
+    }
+  ]
+}

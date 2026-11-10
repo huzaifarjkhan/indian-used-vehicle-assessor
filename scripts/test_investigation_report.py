@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Regression test for the evidence-first full HTML report builder (stdlib only)."""
-import json, subprocess, sys, tempfile
+import json, re, subprocess, sys, tempfile
 from pathlib import Path
 root=Path(__file__).resolve().parent.parent
 with tempfile.TemporaryDirectory() as tmp:
@@ -14,5 +14,5 @@ with tempfile.TemporaryDirectory() as tmp:
     assert 'Official website field-by-field guide' in text
     assert text.count('data-check="') >= 134
     assert text.count('class="report-card"') >= 10
-    assert all(real not in text for real in ('MH43X3630','MH01AE3833','MALBT51GR9M100186'))
+    assert not re.search(r'\bMH\d{2}[A-Z]{1,3}\d{4}\b', text), 'Report unexpectedly contains a live-format Maharashtra plate'
     print('PASS: full investigation report generated with 134-point checklist, portal links and no real case data')

@@ -73,4 +73,11 @@ python3 scripts/build_investigation_report.py \\
 
 For a new vehicle, make a **private copy** of `templates/investigation-report-data.json`, fill the IDs, official lookup results, photo observations, portal statuses, comparables (only if requested), and evidence ledger; then run the generator. It automatically derives VIN last-five/last-four and engine last-four characters and inserts them into `templates/portal-checks.json` website instructions. Use `--embed-images` for local photos; sensitive/identity images are excluded unless explicitly permitted in a **private** output. Never upload actual RC photos, owners' personal data, or live case JSON into the public GitHub repository.
 
-The report includes red attention points first, 13 source links, copy buttons, a self-contained photo gallery, a 134-item interactive inspection checklist, progress import/export, and A4 browser printing. A static anonymized example appears in `output/Demo_Investigation_Report.html`.
+The report includes red attention points first, 13 source links, copy buttons, a self-contained photo gallery, a 134-item interactive inspection checklist, progress import/export, and A4 browser printing. The command above generates an anonymized example at `output/Demo_Investigation_Report.html`.
+
+
+Validate the complete report generator locally:
+
+```bash
+python3 scripts/test_investigation_report.py
+```

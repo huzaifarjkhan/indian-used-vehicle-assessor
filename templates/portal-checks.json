@@ -1,0 +1,231 @@
+[
+  {
+    "id": "vahan_rc",
+    "title": "VAHAN National Register / RC details",
+    "url": "https://vahan.parivahan.gov.in/nrservices/",
+    "steps": "Vehicle Search / Know Your Vehicle Details. Save current RC validity, owner serial, RTO, HP/financier and compliance.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      }
+    ],
+    "limits": "May require CAPTCHA/sign-in; printed RC is not live verification."
+  },
+  {
+    "id": "ntr",
+    "title": "National Transport Repository (NTR)",
+    "url": "https://services.parivahan.gov.in/ntr/",
+    "steps": "SERVICE → Know Vehicle/DL Details → RC search; note accident count and compliance indicators.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      }
+    ],
+    "limits": "Owner or own OTP may be required; count does not prove severity."
+  },
+  {
+    "id": "vahan_application",
+    "title": "VAHAN application history",
+    "url": "https://vahan.parivahan.gov.in/vahanservice/",
+    "steps": "Select state/RTO → Status → Know Your Application Status.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "VIN last 5",
+        "key": "vin_last_5"
+      },
+      {
+        "label": "Existing application",
+        "key": "renewal_application"
+      }
+    ],
+    "limits": "Payment success is not approval. Do not start a new application for lookup."
+  },
+  {
+    "id": "national_challan",
+    "title": "National e-Challan",
+    "url": "https://echallan.parivahan.gov.in/",
+    "steps": "Check Pending Challan Status → Vehicle Number → manual CAPTCHA → Get Details.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "First registration",
+        "key": "first_registration"
+      }
+    ],
+    "limits": "A no-match does not clear separate state fines."
+  },
+  {
+    "id": "maha_challan",
+    "title": "Maharashtra e-Challan",
+    "url": "https://mahatrafficechallan.gov.in/",
+    "steps": "Search by vehicle and chassis/engine characters.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "VIN last 4",
+        "key": "vin_last_4"
+      },
+      {
+        "label": "Engine last 4",
+        "key": "engine_last_4"
+      }
+    ],
+    "limits": "Registered owner's OTP may be required. Obtain report with consent."
+  },
+  {
+    "id": "puc",
+    "title": "Pollution Under Control (PUC)",
+    "url": "https://vahan.parivahan.gov.in/puc/views/PucCertificate.xhtml",
+    "steps": "PUC certificate search → registration → VIN suffix → manual CAPTCHA.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "VIN last 5",
+        "key": "vin_last_5"
+      }
+    ],
+    "limits": "Paper records may require confirmation if digital record absent."
+  },
+  {
+    "id": "ncrb",
+    "title": "NCRB Digital Police Vehicle NOC",
+    "url": "https://digitalpolice.gov.in/",
+    "steps": "Citizen Services → Generate Vehicle NOC using allowed login.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      },
+      {
+        "label": "Engine number",
+        "key": "engine_number"
+      }
+    ],
+    "limits": "Own OTP/CAPTCHA may be required; cannot verify accident-free history."
+  },
+  {
+    "id": "mumbai_police",
+    "title": "Mumbai Police stolen/unclaimed vehicle",
+    "url": "https://mumbaipolice.gov.in/stolen_vehicles",
+    "steps": "Search registration/chassis/engine; enter CAPTCHA manually.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      },
+      {
+        "label": "Engine number",
+        "key": "engine_number"
+      }
+    ],
+    "limits": "Page refreshing with no result is inconclusive, not cleared."
+  },
+  {
+    "id": "zipnet",
+    "title": "ZIPNET regional stolen vehicles",
+    "url": "https://zipnet.delhipolice.gov.in/vehiclesmobiles/missingvehicles/",
+    "steps": "Search actual table by registration then VIN.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      }
+    ],
+    "limits": "Participating-state records, not an all-India clearance."
+  },
+  {
+    "id": "hyundai_recall",
+    "title": "Hyundai India recall checker",
+    "url": "https://www.hyundai.com/in/en/connect-to-service/important-customer-notification",
+    "steps": "Recall Campaign → Enter VIN → Check.",
+    "fields": [
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      }
+    ],
+    "limits": "Hyundai only. No recall does not prove mechanical condition."
+  },
+  {
+    "id": "maruti_recall",
+    "title": "Maruti Suzuki recall checker",
+    "url": "https://www.marutisuzuki.com/important-information-for-customers",
+    "steps": "Enter VIN → Check.",
+    "fields": [
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      }
+    ],
+    "limits": "Maruti only. Do not paste an RTO application number as VIN."
+  },
+  {
+    "id": "manufacturer_service",
+    "title": "Manufacturer service and bodyshop history",
+    "url": "https://www.hyundai.com/in/en",
+    "steps": "Contact an authorised service facility with owner's permission to request service, mileage and repair records.",
+    "fields": [
+      {
+        "label": "Full VIN",
+        "key": "vin"
+      },
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "Manufacturer",
+        "key": "make"
+      }
+    ],
+    "limits": "Brand link is example; replace with relevant manufacturer, records are not fully public."
+  },
+  {
+    "id": "maha_hsrp",
+    "title": "Maharashtra HSRP",
+    "url": "https://transport.maharashtra.gov.in/",
+    "steps": "Navigate to official HSRP provider for the registration RTO and verify fitment before booking.",
+    "fields": [
+      {
+        "label": "Registration",
+        "key": "registration"
+      },
+      {
+        "label": "RTO",
+        "key": "rto"
+      },
+      {
+        "label": "VIN last 5",
+        "key": "vin_last_5"
+      }
+    ],
+    "limits": "Confirm fitment applicability first. Do not transact during read-only lookup."
+  }
+]

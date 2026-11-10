@@ -1,7 +1,7 @@
 ---
 name: indian-used-vehicle-assessor
 description: Evidence-first Indian second-hand vehicle assessment from photos, documents, official records, public sources and professional inspection, with step-by-step portal guidance and reusable HTML checklist. Use whenever a user supplies a used car/bike's number, VIN, photos, documents, or listing and asks about history, ownership, accident records, fitness, legal validity, price, or purchase checks.
-version: 1.0.0
+version: 1.1.0
 locale: en-IN
 last_researched: 2026-11-03
 ---
@@ -10,7 +10,7 @@ last_researched: 2026-11-03
 
 ## Mission and boundaries
 
-For any used car, two-wheeler, or commercial vehicle in India, produce a rigorous, **evidence-first** due-diligence assessment. Extract facts from the user's supplied photos/files; verify with accessible official portals, manufacturer systems and independent sources; guide the user through unavoidable self-service steps; create a customized markable A4 HTML checklist; and report exactly what remains uncertain. Prefer concise, tabular answers in chat, with the comprehensive details in the attached artifact.
+For any used car, two-wheeler, or commercial vehicle in India, produce a rigorous, **evidence-first** due-diligence assessment. Extract facts from the user's supplied photos/files; verify with accessible official portals, manufacturer systems and independent sources; guide the user through unavoidable self-service steps; create a detailed source-linked HTML investigation report with copy-ready portal inputs, plus a customized markable A4 checklist; and report exactly what remains uncertain. Prefer concise, tabular answers in chat, with the comprehensive details in the attached artifact.
 
 **Objective by default.** Show recorded facts, sources, checked dates, conflicts and unresolved items. Do not create a purchase recommendation, fair price, or risk score unless the user requests it. When they do, show the reasoning and condition-based assumptions explicitly.
 
@@ -59,7 +59,7 @@ Market pricing: collect >=5 **currently active** comparable listings when possib
 1. Start answer with a concise objective status table: verified, reported, unverified, blocked, conflicting.
 2. Provide **copy-ready** lookup values (vehicle number, VIN, last 4/5, registration date, app numbers, insurance validity where available) with no secrets. If owner details are present, redact from shared output unless the user explicitly needs them.
 3. Provide the **next three highest-value actions**, precise portal link, click path, input fields, expected result, and login/OTP blocker. Do not repeat user steps that are already complete.
-4. Generate downloadable A4 HTML using `scripts/build_checklist.py --data vehicle.json --output report.html`; optionally provide a PDF if requested and validate opening/rendering. Prioritize HTML first after previous PDF viewer incompatibilities.
+4. Generate the **complete investigation report** as HTML using `scripts/build_investigation_report.py --data investigation.json --output report.html --embed-images` where suitable. Include 134 checks using `templates/checks.json`. Use `scripts/build_checklist.py` only when the user requests a standalone checklist; optionally provide PDF only when requested and validate opening/rendering. Prioritize HTML after previous PDF viewer incompatibilities.
 5. Keep source ledger and evidence references in report. Avoid status labels like “confirmed accident-free”; if NTR shows `Accident History: 1` record `one accident entry shown; date, cause, severity unverified`.
 6. Update only changed facts when the user supplies new evidence. Reconcile contradictions rather than silently overwriting old findings. Keep the existing checklist's verified items and notes when refreshing if files are available.
 
@@ -126,3 +126,17 @@ Each check must also have `checked_at`, `source_url` or file, `entered_value`, `
 - [ ] Red-flag panel first; no false 'clean' conclusions; no invented accident/owner/insurance result.
 - [ ] Comprehensive HTML checklist downloadable, actual path verified, local print tested. PDF if requested is independently validated/rendered.
 - [ ] The final reply gives only what has changed and the highest-priority next steps, without unnecessary questions.
+
+## Detailed Getz-style HTML investigation report (v1.1)
+
+**Required when the user asks for a detailed investigation/report rather than only a checklist.** Follow `references/html-investigation-report.md` and create a private case JSON using `templates/investigation-report-data.json`. Treat the Hyundai Getz assessment as the *layout pattern* only: it is not evidence about future vehicles. Do not copy real registration numbers, VINs, owner information, or photographs into the public repo.
+
+Use `scripts/build_investigation_report.py` to generate **one self-contained, A4-printable HTML report**. It must contain the following sections in order: recorded red/attention points; key RC/ownership metrics; complete copyable identifiers (full VIN/engine, VIN last 5/4, engine last 4, application references); online result ledger; photo-specific observations with limitations; official portal cards with exact values autofilled; outstanding seller/inspector requests; dated comparable listings only when user requests valuation; a local photo gallery; the 134-point interactive checklist; evidence log and sign-off. All findings need source, date, exact result/uncertainty. No purchase verdict unless requested.
+
+```bash
+python3 scripts/build_investigation_report.py \\
+  --data examples/anonymized-investigation-report.json \\
+  --output output/Demo_Investigation_Report.html
+```
+
+Use `--embed-images` for approved local photos. Photos with `sensitive: true` (RC cards showing owner/address, IDs, etc.) remain excluded; `--include-sensitive-images` is a separate explicit, **private-output-only** option. Never commit filled report JSON, owner documents, or generated real-vehicle reports to this public repository. Use `templates/portal-checks.json` for the 13 portal guides; verify each site's availability and inputs when actually investigating. Final HTML must be tested in a browser, including working copy buttons, checklist status, progress export/import and A4 print.

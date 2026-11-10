@@ -4,7 +4,7 @@ A portable, user-provided ChatGPT skill and standalone checklist. The skill is *
 
 ## Quick start for future ChatGPT chats
 
-> Use the Indian Used-Vehicle Assessor skill I attached. I am evaluating this car: [photos / listing / RC / VIN]. Extract all identifiers, verify online records you can access, explain any OTP/CAPTCHA blocks, investigate previous sale/accident/fraud records and prices if asked, then produce an objective evidence report, a copy-ready online lookup guide and an A4 HTML inspection checklist. Prioritize newly discovered discrepancies at the top. Do not assume a clean vehicle from no matches. Do not ask me again for data already in the attached documents.
+> Use the Indian Used-Vehicle Assessor skill I attached. I am evaluating this car: [photos / listing / RC / VIN]. Extract all identifiers, verify online records you can access, explain any OTP/CAPTCHA blocks, investigate previous sale/accident/fraud records and prices if asked, then produce a complete objective HTML investigation report with copy-ready portal fields, linked sources, photo evidence and an interactive 134-point inspection checklist. Prioritize newly discovered discrepancies at the top. Do not assume a clean vehicle from no matches. Do not ask me again for data already in the attached documents.
 
 ## Files
 
@@ -58,3 +58,19 @@ python3 scripts/build_checklist.py --data templates/vehicle-data.json --output o
 ## Public-repository privacy
 
 This repository contains reusable instructions, blank templates, and anonymized examples only. **Do not commit actual vehicle registration numbers, VINs, owner names, contact information, insurance policy numbers, RC scans, inspection reports, OTPs, or other buyer/seller records.** Keep completed assessments offline or in private repositories.
+
+## Detailed HTML investigation report (new)
+
+The repository now has **two** separate generators: `scripts/build_checklist.py` creates a standalone interactive checklist; `scripts/build_investigation_report.py` builds a richer, self-contained investigation report based on the Hyundai Getz report format, but using only anonymized reusable templates. See `references/html-investigation-report.md`.
+
+Run the anonymized demo:
+
+```bash
+python3 scripts/build_investigation_report.py \\
+  --data examples/anonymized-investigation-report.json \\
+  --output output/Demo_Investigation_Report.html
+```
+
+For a new vehicle, make a **private copy** of `templates/investigation-report-data.json`, fill the IDs, official lookup results, photo observations, portal statuses, comparables (only if requested), and evidence ledger; then run the generator. It automatically derives VIN last-five/last-four and engine last-four characters and inserts them into `templates/portal-checks.json` website instructions. Use `--embed-images` for local photos; sensitive/identity images are excluded unless explicitly permitted in a **private** output. Never upload actual RC photos, owners' personal data, or live case JSON into the public GitHub repository.
+
+The report includes red attention points first, 13 source links, copy buttons, a self-contained photo gallery, a 134-item interactive inspection checklist, progress import/export, and A4 browser printing. A static anonymized example appears in `output/Demo_Investigation_Report.html`.
